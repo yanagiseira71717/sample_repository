@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">  <meta charset="UTF-8">
+  <title>Casteria</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script>
+    var w = $(window).width();
+    var x = 600;
+    if (w > x) {
+      var ww = 2; 
+    } else { 
+      var ww = 1; 
+    };
+    $(document).ready(function () {
+      $('.slide-items').bxSlider({
+          maxSlides: ww, 
+          minSlides: ww, 
+          slideWidth:1940,
+          moveSlides: 1,
+          shirinkItems: true,
+      });
+    });
+    $(function() {
+      $('.menu__item').on('click', function() {
+          $(this).children('.menuSub').slideToggle();
+      });
+    });
+     $(function(){
+      if(w <= x) {
+        $('.burger-btn').on('click', function(){
+          // console.log('ok');
+          $('.header-list').children('.header-item').slideToggle();
+      });
+      }});
+
+      $(function(){
+      // .burger-btnクリック時にイベント発火
+        $('.burger-btn').on('click',function(){
+          if ($(this).css('border-color') === "rgb(105, 105, 105)") {
+              // 開くときの処理
+              console.log('a');
+              $(this).css("border-color","orange");
+              $('.header').css("height","270px");
+          } else if ($(this).css('border-color') === "rgb(255, 165, 0)") {
+              // 閉じるとき
+              console.log('b');
+              $(this).css("border-color","rgb(105, 105, 105)");
+              $('.header').css("height","100px");
+          }
+        });
+      });
+    $(function(){
+      $(window).scroll(function (){
+        $('.fadein').each(function(){
+          var position = $(this).offset().top;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+          if (scroll > position - windowHeight + 200){
+            $(this).addClass('active');
+          }
+        });
+      });
+    });
+    
+  </script>
+</head>
+<body>
+  <div class="background">
+    <div class="container-fluid"></div>
+    <!-- ヘッダー -->
+    
+    <div class="header">
+      
+      <div class="header-logo">
+        Casteria
+        <div class="burger-btn">
+          <span class="bar bar_top"></span>
+          <span class="bar bar_mid"></span>
+          <span class="bar bar_bottom"></span>
+        </div>
+      </div>
+      <div class="header-list">
+        <!-- ヘッダーの項目 -->
+        <ul class ="header-item">
+          <li>Home</li>
+          <li>Food</li>
+          <li>Drink</li>
+          <li>お問合せ</li>
+          <li>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+      </div> 
+    </div>
+    
+
+    <div class="main">
+      <!-- 画像の記述する -->
+      <div class="slide-items__wrap">
+        <ul class="slide-items">
+          <li class="slide-items__item">
+            <img src="img/interior.jpg" class="slide-img" alt="">
+          </li>
+          <li class="slide-items__item">
+            <img src="img/restaurant.jpg" class="slide-img" alt="">
+          </li>
+          <li class="slide-items__item">
+            <img src="img/food.jpg" class="slide-img" alt="">
+          </li>
+          <li class="slide-items__item">
+            <img src="img/food2.jpg" class="slide-img" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu container">
+        <li class="menu__item">
+          <h3>新型コロナウイルスに対する取り組みの最新情報をご案内</h3>
+          <div class="menu__drop">■衛生面に関して</div>
+          <ul class="menuSub">
+            <li class="menuSub__item"><a href="">・マスクを着用しての接客</a></li>
+            <li class="menuSub__item"><a href="">・出勤前の検温の徹底</a></li>
+          </ul>
+        </li> 
+        <li class="menu__item">
+          <div class="menu__drop">■お客様へのご協力のお願い</div>
+          <ul class="menuSub">
+            <li class="menuSub__item">
+              <a href="">・店内では、飲食時以外のマスク着用をお願いいたします</a>
+            </li>
+            <li class="menuSub__item">
+              <a href="">・入店時の手指の消毒にご協力ください</a>
+            </li>
+            <li class="menuSub__item">
+              <a href="">・レジに並ぶ際、目安を示すフロアステッカーに沿った列間隔の確保にご協力ください</a>
+            </li>
+            <li class="menuSub__item">
+              <a href="">・多数でお越しの際はお一人がまとめてご注文願います</a>
+            </li>
+            <li class="menuSub__item">
+              <a href="">・発熱や体調不良の際はご入店をお控えください</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu__item">
+          <div class="menu__drop">■サービスに関して</div>
+          <ul class="menuSub">
+            <li class="menuSub__item">
+              <a href="">・マスクを着用しての接客</a>
+            </li>
+            <li class="menuSub__item">
+              <a href="">・出勤前の検温の徹底</a>
+            </li>
+          </ul>
+        </li>
+      </ul>    
+    </nav>
+    <!-- フードメニュー -->
+    <div class="menu__item2 container ">
+      <!-- 一つ目 -->
+      <div class="food-menu fadein ">
+        <h1>Signature Food</h1>
+        <div class="food1">
+          <img src="img/food.jpg">
+          サーモンは刺身やカルパッチョで食べるのが美味しいですが、
+          リッチな気分になれるサーモンステーキがおすすめです。
+          サーモンの美味しさを引き立てる２種のソースも絶品です
+        </div>
+      </div>
+      <!-- 一つ目終わり -->
+
+      <!-- 二つ目 -->
+      <div class="food-menu fadein">
+        <h1>Our Coffee</h1>
+        <div class="food1">
+          <img src="img/barista.jpg">
+        当店のコーヒー豆が厳選して世界中から買い付けています。
+        そして、そのコーヒー豆のおいしさを最大限に引き出すために
+        自社のロースタリーで焙煎しています。
+        </div>
+      </div>
+      <!-- ２つ目終わり -->
+
+      <!-- 三つ目 -->
+      <div class="food-menu fadein">
+        <h1>Our Food</h1>
+        <div class="food1">
+          <img src="img/food3.jpg" >
+        当店は何よりもまずは衛星管理に気をつけています。
+        「安全・安心」をお届けするために日々継続的な努力を惜しみません。
+        </div>
+      </div>
+      <!-- ３つ目終わり -->
+    </div>
+      
+    <!-- 問い合わせ先 -->
+    <div class="contact-area container">						
+      <div class="adress-area">
+        <div class="col contact-text"><h3>Address</h3></div><br>
+        <div class="col contact-text">681 xxx Drive,xxxx xxxx #01-06 000000</div>
+        <div class="col contact-text">Opening Hours</div><br>
+        <div class="col contact-text"><h3>Mondays - Friday:10am - 9pm</h3></div>
+        <div class="col contact-text">Saturdays,Sundays & public Holidays:9am-9pm</div><br>
+      </div>
+      <div class="contact-img-area">
+        <img src="img/barista.jpg" class="contact-img">
+      </div>
+    </div>
+    <!-- 問い合わせ先 end -->
+    <div class="store container">
+      <div class="store-title"> 
+          店舗一覧
+      </div>
+      <div class="store-mini">
+        <div class="store-mini-item">
+          <img class="rounded-circle store-img" src="img/restaurant2.jpg" alt="Circle image">
+          &#12288;&#12288;<i class='fas fa-map-marker-alt'></i>東京都渋谷区XXXXXX XXXXX
+        </div>
+        <div class="store-mini-item">
+          <img class="rounded-circle store-img" src="img/restaurant3.jpg" alt="Circle image">
+          &#12288;&#12288;<i class='fas fa-map-marker-alt'></i>千葉県松戸市XXXXXX XXXXX
+        </div>
+        <div class="store-mini-item">
+          <img class="rounded-circle store-img" src="img/restaurant4.jpg" alt="Circle image">
+          <i class='fas fa-map-marker-alt'></i>神奈川県横浜市XXXXXX XXXXX
+        </div>
+        <div class="store-mini-item">
+          <img class="rounded-circle store-img" src="img/restaurant5.jpg" alt="Circle image">
+          &#12288;<i class='fas fa-map-marker-alt'></i>埼玉県川越市XXXXXX XXXXX
+        </div> 
+      </div>
+    </div>
+    <!-- フッター -->
+    <div class="footer">
+      <div class="footer-list container">
+        <ul class="footer-list-items">
+          <li>プライバシーポリシー&#12288;</li>
+          <li>お問合わせ</li>
+          <li>&#12288;運営会社</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
