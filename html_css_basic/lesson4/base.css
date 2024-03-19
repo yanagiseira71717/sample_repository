@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  text-align: left;
+  list-style-type: none;
+  border-collapse: collapse;
+}
+
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; display: block; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;}
+
+html {
+
+}
+
+body {
+  font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 上の部分は気にせずここから書く */
+.box1 {
+    width: 300px;
+    border: solid 1px black;
+    height: 500px;
+    float: left; 
+    background-color: red;
+    margin: 50px auto;
+}
+
+.box2 {
+    width: 300px;
+    border: solid 1px black;
+    height: 500px;
+    float: left; 
+    background-color: blue;
+    margin: 50px auto;
+}
+.box3 {
+    width: 300px;
+    border: solid 1px black;
+    height: 500px;
+    float: left; 
+    background-color: green;
+    margin: 50px auto;
+}
+.minibox {
+    width: 50px;
+    border: solid 1px black;
+    height: 50px;
+    float: left; 
+    background-color: white;
+    /* margin: 50px auto; */
+} 
+.boxparent1 {
+ padding-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:30px 50px; 
+}
+.boxparent2 {
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin:5px 5px; 
+}
+
+.boxparent2 .minibox {
+ margin-left: 10px;
+}
+.boxparent3 {
+  padding-top: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin:5px 5px;  
+}
+.boxparent3 .minibox {
+ margin-top: 10px;
+}
