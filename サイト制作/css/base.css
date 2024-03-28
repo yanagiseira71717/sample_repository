@@ -1,0 +1,466 @@
+@charset "UTF-8";
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+	margin: 0;
+	/* padding: 0; */
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	/* font-size: 100%; */
+	text-align: left;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; display: block; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;}
+
+
+body {
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	body {
+		line-height: 1.8;
+	  }
+	  .menu__item:last-child {
+		margin-right: 0;
+	  }
+
+	  .menu a:hover {
+		opacity: 0.7;
+		text-decoration: none;
+	  }
+	  .menuSub {
+		display: none;
+	  }
+}
+
+/****** ヘッダー *******/
+.header {
+	height: 10vh;
+	background-color: lightgray;
+	display: flex;
+  	justify-content: space-between;
+	
+
+}
+  
+.header-logo {
+	float: left;
+	font-size: 36px;
+	padding: 10px 40px;
+  }
+  
+  .navbar {
+	float: right;
+	height: 70px;
+
+  }
+
+  .header-list li {
+	float: left;
+	padding: 33px 20px;
+	
+  }
+
+  /****** メイン *******/
+  .main {
+	background-color:;
+	height: 600px;
+  }
+
+  .background {
+   background-color:#FFEFD5 ;
+  }
+  
+
+  /* スライドショー */
+  .slide-items__wrap {
+	width: 100vw;
+    height: 500px;
+  }
+
+  .slide-items__item {
+	width: 700px;
+    height: 600px;
+  }
+  
+  .slide-img {
+	width: 50vw;
+    height: 100%;
+	margin: 0% 0;
+	
+  }
+
+  .bx-wrapper .bx-pager {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 2; /* スライドより上に表示させる */
+  }
+
+  h3 
+  {
+	Padding: 10px;
+
+  }
+  
+  
+  body {
+  line-height: 1.8;
+}
+.menu {
+	background-color: ;
+}
+.menu__item:last-child {
+  margin-right: 0;
+}
+.menu a {
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  color: black;
+}
+.menu a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+.menu__drop {
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  margin-bottom: 2px;
+  color: black;
+  background-color: #FFC7AF;
+  cursor: pointer;
+}
+.menuSub {
+  display: none;
+}
+#acMenu dt{
+	display:block;
+	width:200px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	border:#666 1px solid;
+	cursor:pointer;
+}
+#acMenu dd{
+	background:#f2f2f2;
+	width:200px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	border:#666 1px solid;
+	display:none;
+}
+.fadein {
+	opacity : 0;
+	transform : translate(0, 100px);
+	transition : all 1s;
+}
+	
+.fadein.active{
+	opacity : 1;
+	transform : translate(0, 0);
+}
+
+.menu__item2 img  {
+	width: 50vw;
+    height: 500px;
+
+	
+}
+.menu__item2 .food1  {
+  	margin-top: 10px;
+	display: flex;	
+}
+.contact-area {
+	background-color: black;
+	height: 500px;
+	display: flex;
+	margin-top: 50px;
+	padding: 0;
+}
+
+.contact-text {
+color:white;
+}
+
+.adress-area {
+color: white;
+width: 50%;
+height: 100%;
+margin-top: 50px;
+}
+
+.contact-img {
+	width: 100%;
+	height: 100%;
+}
+
+.contact-img-area {
+	width: 50%;
+	padding: 20px 0;
+}
+
+.store-title {
+	font-size: 18px;
+	text-align: center;
+}
+
+.store-mini {
+	width: 100%;
+	height: 150px;
+	display: flex;
+}
+.rounded-circle {
+	border-radius:50% !important;
+	width: 100px;
+	height: 100px;
+}
+.store-mini-item {
+	width: 25%;
+	height: 100px;
+}
+.store-img {
+	display: block;
+	margin: auto;
+}
+.map {
+	width: 20px;
+	height: 20px;
+}
+
+.bx-wrapper .bx-pager {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 2; /* スライドより上に表示させる */
+  }
+
+  /****** フッター *******/
+  .footer  {
+	width: 100vw;
+	display: flex;
+	background-color: gray;
+  }
+  .footer-list-items {
+	display: flex;
+	justify-content: center;
+	height: 60px;
+	margin: auto;
+	text-align: center;
+  }
+
+  .burger-btn {
+	display: none;
+  }
+  body {
+	background-color: #ffdab9;
+}
+  
+
+/* レスポンシブ */
+
+@media screen and (max-width:600px){
+	.menu__item2 .food1  {
+		width: 90%;
+		/* margin: auto; */
+		display: block;	
+	}
+
+	.contact-area {
+		font-size:10px;
+		background-color: black;
+		height: 420px;
+		display: block;
+		margin-top: 50px;
+		width: 85%;
+	}
+
+	.contact-img {
+		width: 100%;
+		height: 200px;
+	}
+
+	.adress-area {
+		height: 200px;
+		width: 100%;
+	}
+
+	.contact-img-area {
+		width: 100%;
+		padding: 20px 0;
+	}
+
+	.header {
+		display: block;
+		height: 70px;
+	}
+	.menu__item2 img  {
+		width: 70vw;
+	}
+	.food1 img {
+		width: 100%;
+	}
+	.food-menu {
+		margin-top: 30px;
+	}
+	.food1{
+		width: 100%;
+		margin: auto;
+	}
+	.menu__drop {
+		font-size: 18px;
+		display: block;
+		padding: 30px;
+		margin-bottom: 2px;
+		color: black;
+		background-color: #FFC7AF;
+		cursor: pointer;
+	}
+  	.slide-items__wrap {
+		width: 100vw;
+		height: 400px;
+		margin-top: 20px;
+	}
+	.bxslider{   
+		margin:0px;
+	}
+	
+	.bx-wrapper {
+		position: relative;
+		width: 80%;
+		margin: auto;
+	}
+	
+	.bx-wrapper img {
+		width:100%;
+	}
+	
+	.bx-viewport {
+		max-height: 450px;
+	}
+	.store {
+		display: none;
+	}
+	.bx-wrapper .bx-next {
+		right: -50px;
+	}
+
+	.bx-wrapper .bx-prev {
+		left: -50px;
+	}
+
+	
+
+	.slide-img {
+		width: 100px;
+	}
+
+	.header-list li {
+		float:  none;
+		padding: 5px 10px;
+	}
+
+	.header-logo {
+		float: none;
+		font-size: 36px;
+		padding: 0px;
+  	}
+
+	.header-list ul {
+		padding: 0px;
+		background-color: lightgray;
+		width: 100%;
+	}
+
+	.btn-outline-success {
+		color: black;
+		background-color: transparent;
+		background-image: none;
+		border-color: black;
+	}
+	.form-inline .form-control {
+		width: 83%;
+	}
+	.header-item {
+		display: none;
+	}
+	body {
+		background-color: #ffdab9;
+	}
+
+	.burger-btn {
+		display: block;
+		width: 50px;
+		height: 39px;
+		position: relative;
+		z-index: 3;
+		border-color: black;
+		background-color:lightgray;
+		color: black;
+		float: right;
+		margin: 10px;
+		border: solid 1px #696969;
+	  }
+	  .bar {
+		width: 20px;
+		height: 1px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #fff;
+	  }
+	  .bar_top {
+		top: 10px;
+		background-color: #696969;
+	  }
+	  .bar_mid {
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color:#696969
+	  }
+	  .bar_bottom {
+		bottom: 10px;
+		background-color:#696969
+	  }
+	  .main {
+		height: 500px;
+	  }
+
+	
+
+	
+
+	
+
+
+
+}
+
+
+
+
+  
