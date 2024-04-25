@@ -8,14 +8,3 @@ $countries = ["日本", "アメリカ", "イギリス", "フランス"];
 foreach ($countries as $key => $country){
     echo $key . ':'. $country. '<br/>';
 }
-// $countries = [
-//         '1:' => '日本',
-//         '2:' => 'アメリカ',
-//         '3:' => 'イギリス',
-//         '4:' => 'フランス',
-// ];
-
-// foreach ($countries as $key => $country){
-//     echo ''. $key . ''. $country. '<br/>';
-// }
-
