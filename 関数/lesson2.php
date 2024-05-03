@@ -10,19 +10,19 @@
 // ・2020年元旦から現在までの経過日数 (ddd日)
 date_default_timezone_set('Asia/Tokyo');
 
-echo "現在日時";
+echo "・現在日時";
 $currentDateTime = date('(Y年m月d日（') . getJapaneseDayOfWeek(date('l')) . '）)';
 echo $currentDateTime . "<br>";
 
-echo "現在日時から3日後";
+echo "・現在日時から3日後";
 $threeDaysLater = date('(Y年m月d日 H時i分s秒)', strtotime('+3 days'));
 echo $threeDaysLater . "<br>";
 
-echo "現在日時から12時間前" ;
+echo "・現在日時から12時間前" ;
 $twelveHoursBefore = date('(Y年m月d日 H時i分s秒)', strtotime('-12 hours'));
 echo $twelveHoursBefore . "<br>";
 
-echo "2020年元旦から現在までの経過日数 ";
+echo "・2020年元旦から現在までの経過日数 ";
 $startDate = strtotime('2020-01-01');
 $currentDate = time();
 $elapsedDays = floor(($currentDate - $startDate) / (60 * 60 * 24));
