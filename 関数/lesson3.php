@@ -23,7 +23,6 @@
 // 14
 // 15 アホわん
 
-
 function nabeatsu($i) {
  for ($j = 1; $j <= $i; $j++) {
         echo '<br>';

@@ -69,10 +69,6 @@ function calculateChange($yen, $product) {
 $yen = 10000; // お金の額
 $product = 150; // 商品の価格
 
-// お金が商品価格より少ない場合の処理
-$output = "";
-
-// HTML内での結果表示
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -82,7 +78,6 @@ $output = "";
 </head>
 <body>
     <section>
-    <!-- ここに結果表示 -->
     <?php echo calculateChange($yen, $product) ?>
     </section>
 </body>
