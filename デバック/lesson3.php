@@ -10,7 +10,9 @@
 // $_SESSIONの挙動やswitch文については調べてみてください。
 
 
-if (! isset($_SESSION['result'])) {
+session_start();
+
+if (!isset($_SESSION['result'])) {
     $_SESSION['result'] = 0;
 }
 
@@ -25,6 +27,7 @@ class Player
                 break;
             case 2:
                 $janken = 'チョキ';
+                break;
             case 3:
                 $janken = 'パー';
                 break;
@@ -42,7 +45,7 @@ class Me
 
     public function __construct(string $lastName, string $firstName, int $choice)
     {
-        $this->name   = $lastName.$firstName;
+        $this->name   = $lastName . $firstName;
         $this->choice = $choice;
     }
 
@@ -53,7 +56,7 @@ class Me
 
     public function getChoice(): string
     {
-        return $this->jankenConverter($this->choice);
+        return (new Player())->jankenConverter($this->choice);
     }
 }
 
@@ -67,7 +70,7 @@ class Enemy
 
     public function getChoice(): string
     {
-        return $this->jankenConverter($this->choice);
+        return (new Player())->jankenConverter($this->choice);
     }
 }
 
@@ -75,13 +78,14 @@ class Battle
 {
     private $first;
     private $second;
+
     public function __construct(Me $me, Enemy $enemy)
     {
         $this->first  = $me->getChoice();
         $this->second = $enemy->getChoice();
     }
 
-    private function judge(): int
+    private function judge(): string
     {
         if ($this->first === $this->second) {
             return '引き分け';
@@ -112,10 +116,10 @@ class Battle
         }
     }
 
-    private function countVictories()
+    public function countVictories()
     {
         if ($this->judge() === '勝ち') {
-            return $_SESSION['result'] += 1;
+            $_SESSION['result'] += 1;
         }
     }
 
@@ -130,44 +134,52 @@ class Battle
     }
 }
 
-if (! empty($_POST)) {
-    $me    = new Me($_POST['last_name'], $_POST['first_name'], $_POST['choice'], $_POST['choice']);
+if (!empty($_POST)) {
+    $me = new Me($_POST['last_name'], $_POST['first_name'], $_POST['choice']);
     $enemy = new Enemy();
-    echo $me->getName().'は'.$me->getChoice().'を出しました。';
-    echo '<br>'
-    echo '相手は'.$enemy->getChoice().'を出しました。';
+    echo $me->getName() . 'は' . $me->getChoice() . 'を出しました。';
+    echo '<br>';
+    echo '相手は' . $enemy->getChoice() . 'を出しました。';
     echo '<br>';
     $battle = new Battle($me, $enemy);
-    echo '勝敗は'.$battle->showResult().'です。';
+    echo '勝敗は' . $battle->showResult() . 'です。';
+    $battle->countVictories();
     if ($battle->showResult() === '勝ち') {
-
         echo '<br>';
-        echo $battle->getVitories().'回目の勝利です。';
+        echo $battle->getVitories() . '回目の勝利です。';
     }
 }
 
 ?>
+<?php
+
+if (empty($_POST)) { 
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>デバック練習</title>
+    <meta charset="utf-8">
+    <title>デバック練習</title>
 </head>
 <body>
-    <section>
-    <form action='./lesson3.php'>
+<section>
+    <form action='./lesson3.php' method="post">
         <label>姓</label>
-        <input type="text" name="last_name" value="<?php echo '山田' ?>" />
+        <input type="text" name="last_name" value="<?php echo isset($_POST['last_name']) ? htmlspecialchars($_POST['last_name'], ENT_QUOTES, 'UTF-8') : '山田'; ?>" />
         <label>名</label>
-        <input type="text" name="first_name" value="<?php echo '太郎' ?>" />
+        <input type="text" name="first_name" value="<?php echo isset($_POST['first_name']) ? htmlspecialchars($_POST['first_name'], ENT_QUOTES, 'UTF-8') : '太郎'; ?>" />
         <select name='choice'>
-            <option value=0 >--</option>
-            <option value=1 >グー</option>
-            <option value=2 >チョキ</option>
-            <option value=3 >パー</option>
+            <option value="0">--</option>
+            <option value="1">グー</option>
+            <option value="2">チョキ</option>
+            <option value="3">パー</option>
         </select>
-        <input type="submit" value="送信する"/>
+        <input type="submit" value="ジャンケンする" />
     </form>
-    </section>
+</section>
 </body>
 </html>
+<?php
+} else { 
+}
+?>

@@ -24,7 +24,7 @@ class SelfIntroduction
         string $lastName,
         string $firstName,
         int $age,
-        string $hobby,
+        string $hobby
     ) {
         $this->lastName     = $lastName;
         $this->firstName    = $firstName;
@@ -34,7 +34,7 @@ class SelfIntroduction
 
     public function getFullName()
     {
-        return $this->lastName.$this->firstName;
+        return $this->lastName . $this->firstName;
     }
 
     public function getAge()
@@ -48,41 +48,42 @@ class SelfIntroduction
     }
 }
 
-if (! empty($_POST)) {
-    $lastName         = $_POST['last_name'];
-    $firstName        = $_POST['first_name'];
-    $age              = $_POST['age'];
-    $hobby            = $_POST['hobby'];
-    if ($selfIntroduction) {
-        echo '私の名前は'.$selfIntroduction->getFullName().'年齢は'.$selfIntroduction->getAge().'です。';
-        echo '<br>';
-        echo '趣味は'. $selfIntroduction->getHobby().'です。';
-    }
-}
+if (empty($_POST)) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>デバック練習</title>
+    <meta charset="utf-8">
+    <title>デバック練習</title>
 </head>
 <body>
-    <section>
-    <form action='./lesson2.php' method="post">
+<section>
+    <form action='' method="post">
         <label>姓</label>
         <input type="text" name="last_name"/>
         <label>名</label>
-        <input type="text" name="first_name" />
+        <input type="text" name="first_name"/>
         <label>趣味</label>
-        <input type="text" name="hobby" />
+        <input type="text" name="hobby"/>
         <select name="age">
-            <?php foreach ($createAgeGroup() as $age) :?>
-                <option value="<?php echo $age ?>" ><?php echo $age ?> </option>
+            <?php foreach ($createAgeGroup() as $age) : ?>
+                <option value="<?php echo $age ?>"><?php echo $age ?> </option>
             <?php endforeach; ?>
         </select>
         <input type="submit" value="送信する"/>
     </form>
-    </section>
+</section>
 </body>
 </html>
+<?php
+} else {
+    $lastName = $_POST['last_name'];
+    $firstName = $_POST['first_name'];
+    $age = $_POST['age'];
+    $hobby = $_POST['hobby'];
 
+    $selfIntroduction = new SelfIntroduction($lastName, $firstName, $age, $hobby);
+    echo '私の名前は' . $selfIntroduction->getFullName() . '、年齢は' . $selfIntroduction->getAge() . 'です。<br>';
+    echo '趣味は' . $selfIntroduction->getHobby() . 'です。';
+}
+?>
