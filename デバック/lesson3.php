@@ -38,7 +38,7 @@ class Player
     }
 }
 
-class Me
+class Me extends Player
 {
     private $name;
     private $choice;
@@ -56,11 +56,11 @@ class Me
 
     public function getChoice(): string
     {
-        return (new Player())->jankenConverter($this->choice);
+        return $this->jankenConverter($this->choice);
     }
 }
 
-class Enemy
+class Enemy extends Player
 {
     private $choice;
     public function __construct()
@@ -70,7 +70,7 @@ class Enemy
 
     public function getChoice(): string
     {
-        return (new Player())->jankenConverter($this->choice);
+        return $this->jankenConverter($this->choice);
     }
 }
 
@@ -169,12 +169,12 @@ if (empty($_POST)) {
         <label>名</label>
         <input type="text" name="first_name" value="<?php echo isset($_POST['first_name']) ? htmlspecialchars($_POST['first_name'], ENT_QUOTES, 'UTF-8') : '太郎'; ?>" />
         <select name='choice'>
-            <option value="0">--</option>
-            <option value="1">グー</option>
-            <option value="2">チョキ</option>
-            <option value="3">パー</option>
+            <option value=0>--</option>
+            <option value=1>グー</option>
+            <option value=2>チョキ</option>
+            <option value=3>パー</option>
         </select>
-        <input type="submit" value="ジャンケンする" />
+        <input type="submit" value="送信する" />
     </form>
 </section>
 </body>

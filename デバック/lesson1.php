@@ -10,6 +10,7 @@ if (!empty($_POST)) {
         echo '私の名前は'.$lastName.$firstName.'です。';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">

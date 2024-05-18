@@ -12,7 +12,6 @@ $createAgeGroup = function () {
     }
     return $ageGroup;
 };
-
 class SelfIntroduction
 {
     private $lastName;
