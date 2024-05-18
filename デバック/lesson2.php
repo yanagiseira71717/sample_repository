@@ -31,17 +31,14 @@ class SelfIntroduction
         $this->age          = $age;
         $this->hobby        = $hobby;
     }
-
     public function getFullName()
     {
         return $this->lastName . $this->firstName;
     }
-
     public function getAge()
     {
         return $this->age;
     }
-
     public function getHobby()
     {
         return $this->hobby;
