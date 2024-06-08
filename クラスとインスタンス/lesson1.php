@@ -30,20 +30,5 @@ class Person {
         $this->gender = $gender;
     }
 
-    public function selfIntroduction() {
-        return "私の名前は{$this->name}です。年齢は{$this->age}歳です。性別は{$this->gender}です。<br>";
-    }
-
-    public function addAge() {
-        echo "誕生日が来ました。<br>";
-        
-        $this->age++;
-    }
-}
-
-$person = new Person("太郎", 20, "男性");
-echo $person->selfIntroduction();
-
-$person->addAge();
-echo $person->selfIntroduction();
+    public function 
 ?>
