@@ -285,14 +285,6 @@ FROM
 -- 問28
 -- 全ての有名人の名前,国名、第一言語を出力してください。
 SELECT
-    country_code,
-    MAX(percentage)
-FROM
-    countrylanguages
-group by
-    country_code
-;
-SELECT
     celebrities.name,
     countries.name,
     cl3.language
