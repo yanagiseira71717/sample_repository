@@ -296,7 +296,7 @@ FROM
             cl1.percentage
         from
             countrylanguages as cl2
-            join
+            INNER JOIN
                 (
                     SELECT
                         country_code,
